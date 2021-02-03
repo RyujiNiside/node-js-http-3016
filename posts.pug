@@ -1,0 +1,48 @@
+doctype html
+html(lang="jp")
+  head
+    meta(charset="UTF-8")
+    title 秘密の匿名掲示板
+  body
+    h1 秘密の匿名掲示板
+    a(href="/logout") ログアウト
+    h2 新規投稿
+    form(method="post" action="/posts")
+      div
+        p 対戦相手
+        textarea(name="content")
+        p セット数
+        textarea(name="content1")
+        p 点数
+        textarea(name="content2")
+        p ラケット
+        textarea(name="content3")
+        p ラバーフォワ
+        textarea(name="content4")
+        p ラバーバック
+        textarea(name="content5")
+        p 利き手
+        textarea(name="content6")
+        p 性別
+        textarea(name="content7")
+        p 日付
+        textarea(name="content8")
+        p メモ
+        textarea(name="content9")
+      div
+        button(type="submit") 保存
+    h2 投稿一覧
+    each post in posts
+      p #{post.content}
+      p 投稿日時: #{post.createdAt}
+      p セット数: #{content1}
+      p 点数: #{content2}
+      p ラケット: #{content3}
+      p ラバーフォワ: #{content4}
+      p ラバーバック: #{content5}
+      p 利き手: #{content6}
+      p 性別: #{content7}
+      p 日付: #{content8}
+      p メモ: #{content9}
+      a(href="./bbasic.pug") 保存
+      hr
