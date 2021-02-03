@@ -13,8 +13,6 @@ const server = http.createServer((req, res) => {
       if (req.url === '/enquetes/yaki-shabu') {
         res.write(pug.renderFile('./posts.pug', {
           path: req.url,
-          firstItem: '焼き肉',
-          secondItem: 'しゃぶしゃぶ'
         }));
       } else if (req.url === '/posts') {
         res.write(pug.renderFile('./posts.pug', {
