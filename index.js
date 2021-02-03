@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
   switch (req.method) {
     case 'GET':
       if (req.url === '/enquetes/yaki-shabu') {
-        res.write(pug.renderFile('./form.pug', {
+        res.write(pug.renderFile('./posts.pug', {
           path: req.url,
           firstItem: '焼き肉',
           secondItem: 'しゃぶしゃぶ'
@@ -19,8 +19,6 @@ const server = http.createServer((req, res) => {
       } else if (req.url === '/posts') {
         res.write(pug.renderFile('./posts.pug', {
           path: req.url,
-          firstItem: 'ごはん',
-          secondItem: 'パン'
         }));
       } else if (req.url === '/enquetes/sushi-pizza') {
         res.write(pug.renderFile('./form.pug', {
